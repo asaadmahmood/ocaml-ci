@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta
+    http-equiv="X-UA-Compatible"
+    content="IE=edge"
+  />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+  <title>OCaml</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <link
+    rel="stylesheet"
+    href="./css/tailwind.css"
+  />
+</head>
+
+<body class="">
+  <header class="h-20 flex items-center border-b border-gray-200 bg-white sticky top-0 z-50">
+    <div class="container-fluid flex justify-between items-center">
+      <a href="index.html">
+        <img
+          src="images/logo.svg"
+          width="116px"
+          height="32px"
+        />
+      </a>
+      <a href="index.html">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-5 w-5"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="#667085"
+          stroke-width="2"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"
+          />
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+          />
+        </svg>
+      </a>
+    </div>
+  </header>
+  <div class="container-fluid py-12">
+    <div class="flex items-center mb-7 text-sm font-medium space-x-2">
+      <a href="index.html">Organisations</a>
+      <div>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-4 w-5"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="#D0D5DD"
+          stroke-width="2"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M9 5l7 7-7 7"
+          />
+        </svg>
+      </div>
+      <a href="organization.html">MisterDA</a>
+      <div>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-4 w-5"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="#D0D5DD"
+          stroke-width="2"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M9 5l7 7-7 7"
+          />
+        </svg>
+      </div>
+      <a
+        href="#"
+        class="text-gray-700"
+      >ocaml-ci</a>
+    </div>
+    <div class="justify-between items-center flex">
+      <div class="flex items-center space-x-2">
+        <div class="flex flex-col space-y-1">
+          <div class='flex text-sm space-x-2 items-baseline'>
+            <h1 class='text-xl'>ocaml-ci</h1>
+            <a
+              href='#'
+              class='flex items-center space-x-2'
+            >
+              <span>http://github.com/misterda/ocaml-ci </span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="w-4 h-4"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M13.19 8.688a4.5 4.5 0 011.242 7.244l-4.5 4.5a4.5 4.5 0 01-6.364-6.364l1.757-1.757m13.35-.622l1.757-1.757a4.5 4.5 0 00-6.364-6.364l-4.5 4.5a4.5 4.5 0 001.242 7.244"
+                />
+              </svg>
+            </a>
+
+          </div>
+          <div class="text-gray-500 text-sm">
+            Tristique gravida cursus nunc, morbi. Diam porttitor adipiscing nulla nulla at mauris, vitae ut. Sem arcu
+            enim fringilla et.
+          </div>
+        </div>
+      </div>
+
+      <div class="flex items-center justify-between space-x-3">
+        <div class="form-control relative w-80">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="#667085"
+            stroke-width="2"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+            />
+          </svg>
+          <input
+            type="text"
+            placeholder="Search for a repository"
+          />
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid mt-8 flex flex-col space-y-6">
+      <div class="border border-gray-200 rounded-lg w-full overflow-hidden shadow-sm divide-y divide-gray-200">
+        <div class="bg-gray-50 px-6 py-3 text-gray-500 text-xs font-medium">
+          Default Branch
+        </div>
+        <a href='build-page.html' class="table-row">
+          <div class="flex items-center space-x-3">
+            <div class="icon-status icon-status--active">
+              <div></div>
+            </div>
+            <div class="flex items-center space-x-3">
+              <div class="font-medium text-gray-700 text-sm px-2 py-1 border border-gray-300 rounded-lg">
+                master
+              </div>
+              <div class="flex flex-col">
+                <div
+                  class="text-gray-900 text-sm font-medium"
+                >
+                  samoht Merge pull request ocurrent#431 from clecat/master
+                </div>
+                <div class="flex text-sm space-x-2">
+                  <div>e92bcee</div>
+                  <div>-</div>
+                  <div class="flex space-x-1 items-center">
+                    <svg
+                      width="14"
+                      height="14"
+                      viewBox="0 0 14 14"
+                      fill="none"
+                    >
+                      <path
+                        d="M7 0C3.1325 0 0 3.1325 0 7C0 10.0975 2.00375 12.7137 4.78625 13.6413C5.13625 13.7025 5.2675 13.4925 5.2675 13.3088C5.2675 13.1425 5.25875 12.5913 5.25875 12.005C3.5 12.3288 3.045 11.5763 2.905 11.1825C2.82625 10.9812 2.485 10.36 2.1875 10.1937C1.9425 10.0625 1.5925 9.73875 2.17875 9.73C2.73 9.72125 3.12375 10.2375 3.255 10.4475C3.885 11.5062 4.89125 11.2088 5.29375 11.025C5.355 10.57 5.53875 10.2638 5.74 10.0887C4.1825 9.91375 2.555 9.31 2.555 6.6325C2.555 5.87125 2.82625 5.24125 3.2725 4.75125C3.2025 4.57625 2.9575 3.85875 3.3425 2.89625C3.3425 2.89625 3.92875 2.7125 5.2675 3.61375C5.8275 3.45625 6.4225 3.3775 7.0175 3.3775C7.6125 3.3775 8.2075 3.45625 8.7675 3.61375C10.1063 2.70375 10.6925 2.89625 10.6925 2.89625C11.0775 3.85875 10.8325 4.57625 10.7625 4.75125C11.2087 5.24125 11.48 5.8625 11.48 6.6325C11.48 9.31875 9.84375 9.91375 8.28625 10.0887C8.54 10.3075 8.75875 10.7275 8.75875 11.3837C8.75875 12.32 8.75 13.0725 8.75 13.3088C8.75 13.4925 8.88125 13.7113 9.23125 13.6413C10.6209 13.1721 11.8284 12.279 12.6839 11.0877C13.5393 9.89631 13.9996 8.46668 14 7C14 3.1325 10.8675 0 7 0Z"
+                        fill="black"
+                      />
+                    </svg>
+                    <div>#324</div>
+                  </div>
+                  <div>-</div>
+                  <div>Today at 11:45pm</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="flex text-sm font-normal text-gray-500 space-x-8 items-center">
+            <div>Running since 6 mins</div>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="2"
+              stroke="currentColor"
+              class="w-5 h-5"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M8.25 4.5l7.5 7.5-7.5 7.5"
+              />
+            </svg>
+          </div>
+        </a>
+      </div>
+      <div class="border border-gray-200 rounded-lg w-full overflow-hidden shadow-sm  divide-y divide-gray-200">
+        <div class="bg-gray-50 px-6 py-3 text-gray-500 text-xs font-medium">
+          Active Branches (5)
+        </div>
+        <a href='build-page.html' class="table-row">
+          <div class="flex items-center space-x-3">
+            <div class="icon-status icon-status--success">
+              <svg
+                class="h-4 w-4"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 20 20"
+                fill="#12B76A"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                  clip-rule="evenodd"
+                ></path>
+              </svg>
+            </div>
+            <div class="flex items-center space-x-3">
+              <div class="font-medium text-gray-700 text-sm px-2 py-1 border border-gray-300 rounded-lg">
+                ocamlformat
+              </div>
+              <div class="flex flex-col">
+                <div class="text-gray-900 text-sm font-medium">
+                  Reformat dune files
+                </div>
+                <div class="flex text-sm space-x-2">
+                  <div>e92bcee</div>
+                  <div>-</div>
+                  <div class="flex space-x-1 items-center">
+                    <svg
+                      width="14"
+                      height="14"
+                      viewBox="0 0 14 14"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M7 0C3.1325 0 0 3.1325 0 7C0 10.0975 2.00375 12.7137 4.78625 13.6413C5.13625 13.7025 5.2675 13.4925 5.2675 13.3088C5.2675 13.1425 5.25875 12.5913 5.25875 12.005C3.5 12.3288 3.045 11.5763 2.905 11.1825C2.82625 10.9812 2.485 10.36 2.1875 10.1937C1.9425 10.0625 1.5925 9.73875 2.17875 9.73C2.73 9.72125 3.12375 10.2375 3.255 10.4475C3.885 11.5062 4.89125 11.2088 5.29375 11.025C5.355 10.57 5.53875 10.2638 5.74 10.0887C4.1825 9.91375 2.555 9.31 2.555 6.6325C2.555 5.87125 2.82625 5.24125 3.2725 4.75125C3.2025 4.57625 2.9575 3.85875 3.3425 2.89625C3.3425 2.89625 3.92875 2.7125 5.2675 3.61375C5.8275 3.45625 6.4225 3.3775 7.0175 3.3775C7.6125 3.3775 8.2075 3.45625 8.7675 3.61375C10.1063 2.70375 10.6925 2.89625 10.6925 2.89625C11.0775 3.85875 10.8325 4.57625 10.7625 4.75125C11.2087 5.24125 11.48 5.8625 11.48 6.6325C11.48 9.31875 9.84375 9.91375 8.28625 10.0887C8.54 10.3075 8.75875 10.7275 8.75875 11.3837C8.75875 12.32 8.75 13.0725 8.75 13.3088C8.75 13.4925 8.88125 13.7113 9.23125 13.6413C10.6209 13.1721 11.8284 12.279 12.6839 11.0877C13.5393 9.89631 13.9996 8.46668 14 7C14 3.1325 10.8675 0 7 0Z"
+                        fill="black"
+                      />
+                    </svg>
+                    <div>#324</div>
+                  </div>
+                  <div>-</div>
+                  <div>Today at 11:45pm</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="flex text-sm font-normal text-gray-500 space-x-8 items-center">
+            <div>Passed 6 mins</div>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="2"
+              stroke="currentColor"
+              class="w-5 h-5"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M8.25 4.5l7.5 7.5-7.5 7.5"
+              />
+            </svg>
+          </div>
+        </a>
+        <a href='build-page.html' class="table-row">
+          <div class="flex items-center space-x-3">
+            <div class="icon-status icon-status--failed">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-3 w-3"
+                viewBox="0 0 20 20"
+                fill="#D92D20"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                  clip-rule="evenodd"
+                ></path>
+              </svg>
+            </div>
+            <div class="flex items-center space-x-3">
+              <div class="font-medium text-gray-700 text-sm px-2 py-1 border border-gray-300 rounded-lg">
+                lint-doc-with-doc
+              </div>
+              <div class="flex flex-col">
+                <div class="text-gray-900 text-sm font-medium">
+                  Solve dependencies for lint-doc separately
+                </div>
+                <div class="flex text-sm space-x-2">
+                  <div>e92bcee</div>
+                  <div>-</div>
+                  <div class="flex space-x-1 items-center">
+                    <svg
+                      width="14"
+                      height="14"
+                      viewBox="0 0 14 14"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M7 0C3.1325 0 0 3.1325 0 7C0 10.0975 2.00375 12.7137 4.78625 13.6413C5.13625 13.7025 5.2675 13.4925 5.2675 13.3088C5.2675 13.1425 5.25875 12.5913 5.25875 12.005C3.5 12.3288 3.045 11.5763 2.905 11.1825C2.82625 10.9812 2.485 10.36 2.1875 10.1937C1.9425 10.0625 1.5925 9.73875 2.17875 9.73C2.73 9.72125 3.12375 10.2375 3.255 10.4475C3.885 11.5062 4.89125 11.2088 5.29375 11.025C5.355 10.57 5.53875 10.2638 5.74 10.0887C4.1825 9.91375 2.555 9.31 2.555 6.6325C2.555 5.87125 2.82625 5.24125 3.2725 4.75125C3.2025 4.57625 2.9575 3.85875 3.3425 2.89625C3.3425 2.89625 3.92875 2.7125 5.2675 3.61375C5.8275 3.45625 6.4225 3.3775 7.0175 3.3775C7.6125 3.3775 8.2075 3.45625 8.7675 3.61375C10.1063 2.70375 10.6925 2.89625 10.6925 2.89625C11.0775 3.85875 10.8325 4.57625 10.7625 4.75125C11.2087 5.24125 11.48 5.8625 11.48 6.6325C11.48 9.31875 9.84375 9.91375 8.28625 10.0887C8.54 10.3075 8.75875 10.7275 8.75875 11.3837C8.75875 12.32 8.75 13.0725 8.75 13.3088C8.75 13.4925 8.88125 13.7113 9.23125 13.6413C10.6209 13.1721 11.8284 12.279 12.6839 11.0877C13.5393 9.89631 13.9996 8.46668 14 7C14 3.1325 10.8675 0 7 0Z"
+                        fill="black"
+                      />
+                    </svg>
+                    <div>#324</div>
+                  </div>
+                  <div>-</div>
+                  <div>Today at 11:45pm</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="flex text-sm font-normal text-gray-500 space-x-8 items-center">
+            <div>failed 6 mins</div>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="2"
+              stroke="currentColor"
+              class="w-5 h-5"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M8.25 4.5l7.5 7.5-7.5 7.5"
+              />
+            </svg>
+          </div>
+        </a>
+        <a href='build-page.html' class="table-row">
+          <div class="flex items-center space-x-3">
+            <div class="icon-status icon-status--success">
+              <svg
+                class="h-4 w-4"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 20 20"
+                fill="#12B76A"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                  clip-rule="evenodd"
+                ></path>
+              </svg>
+            </div>
+            <div class="flex items-center space-x-3">
+              <div class="font-medium text-gray-700 text-sm px-2 py-1 border border-gray-300 rounded-lg">
+                risvc64
+              </div>
+              <div class="flex flex-col">
+                <div class="text-gray-900 text-sm font-medium">
+                  Run distro on arch if not supported by master distro
+                </div>
+                <div class="flex text-sm space-x-2">
+                  <div>e92bcee</div>
+                  <div>-</div>
+                  <div class="flex space-x-1 items-center">
+                    <svg
+                      width="14"
+                      height="14"
+                      viewBox="0 0 14 14"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M7 0C3.1325 0 0 3.1325 0 7C0 10.0975 2.00375 12.7137 4.78625 13.6413C5.13625 13.7025 5.2675 13.4925 5.2675 13.3088C5.2675 13.1425 5.25875 12.5913 5.25875 12.005C3.5 12.3288 3.045 11.5763 2.905 11.1825C2.82625 10.9812 2.485 10.36 2.1875 10.1937C1.9425 10.0625 1.5925 9.73875 2.17875 9.73C2.73 9.72125 3.12375 10.2375 3.255 10.4475C3.885 11.5062 4.89125 11.2088 5.29375 11.025C5.355 10.57 5.53875 10.2638 5.74 10.0887C4.1825 9.91375 2.555 9.31 2.555 6.6325C2.555 5.87125 2.82625 5.24125 3.2725 4.75125C3.2025 4.57625 2.9575 3.85875 3.3425 2.89625C3.3425 2.89625 3.92875 2.7125 5.2675 3.61375C5.8275 3.45625 6.4225 3.3775 7.0175 3.3775C7.6125 3.3775 8.2075 3.45625 8.7675 3.61375C10.1063 2.70375 10.6925 2.89625 10.6925 2.89625C11.0775 3.85875 10.8325 4.57625 10.7625 4.75125C11.2087 5.24125 11.48 5.8625 11.48 6.6325C11.48 9.31875 9.84375 9.91375 8.28625 10.0887C8.54 10.3075 8.75875 10.7275 8.75875 11.3837C8.75875 12.32 8.75 13.0725 8.75 13.3088C8.75 13.4925 8.88125 13.7113 9.23125 13.6413C10.6209 13.1721 11.8284 12.279 12.6839 11.0877C13.5393 9.89631 13.9996 8.46668 14 7C14 3.1325 10.8675 0 7 0Z"
+                        fill="black"
+                      />
+                    </svg>
+                    <div>#324</div>
+                  </div>
+                  <div>-</div>
+                  <div>Today at 11:45pm</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="flex text-sm font-normal text-gray-500 space-x-8 items-center">
+            <div>Passed in 16 mins</div>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="2"
+              stroke="currentColor"
+              class="w-5 h-5"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M8.25 4.5l7.5 7.5-7.5 7.5"
+              />
+            </svg>
+          </div>
+        </a>
+        <a href='build-page.html' class="table-row">
+          <div class="flex items-center space-x-3">
+            <div class="icon-status icon-status--default">
+              <div></div>
+            </div>
+            <div class="flex items-center space-x-3">
+              <div class="font-medium text-gray-700 text-sm px-2 py-1 border border-gray-300 rounded-lg">
+                fetch-instead-of-pull
+              </div>
+              <div class="flex flex-col">
+                <div class="text-gray-900 text-sm font-medium">
+                  Just fetch and hard-reset opam-repository
+                </div>
+                <div class="flex text-sm space-x-2">
+                  <div>e92bcee</div>
+                  <div>-</div>
+                  <div class="flex space-x-1 items-center">
+                    <svg
+                      width="14"
+                      height="14"
+                      viewBox="0 0 14 14"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M7 0C3.1325 0 0 3.1325 0 7C0 10.0975 2.00375 12.7137 4.78625 13.6413C5.13625 13.7025 5.2675 13.4925 5.2675 13.3088C5.2675 13.1425 5.25875 12.5913 5.25875 12.005C3.5 12.3288 3.045 11.5763 2.905 11.1825C2.82625 10.9812 2.485 10.36 2.1875 10.1937C1.9425 10.0625 1.5925 9.73875 2.17875 9.73C2.73 9.72125 3.12375 10.2375 3.255 10.4475C3.885 11.5062 4.89125 11.2088 5.29375 11.025C5.355 10.57 5.53875 10.2638 5.74 10.0887C4.1825 9.91375 2.555 9.31 2.555 6.6325C2.555 5.87125 2.82625 5.24125 3.2725 4.75125C3.2025 4.57625 2.9575 3.85875 3.3425 2.89625C3.3425 2.89625 3.92875 2.7125 5.2675 3.61375C5.8275 3.45625 6.4225 3.3775 7.0175 3.3775C7.6125 3.3775 8.2075 3.45625 8.7675 3.61375C10.1063 2.70375 10.6925 2.89625 10.6925 2.89625C11.0775 3.85875 10.8325 4.57625 10.7625 4.75125C11.2087 5.24125 11.48 5.8625 11.48 6.6325C11.48 9.31875 9.84375 9.91375 8.28625 10.0887C8.54 10.3075 8.75875 10.7275 8.75875 11.3837C8.75875 12.32 8.75 13.0725 8.75 13.3088C8.75 13.4925 8.88125 13.7113 9.23125 13.6413C10.6209 13.1721 11.8284 12.279 12.6839 11.0877C13.5393 9.89631 13.9996 8.46668 14 7C14 3.1325 10.8675 0 7 0Z"
+                        fill="black"
+                      />
+                    </svg>
+                    <div>#324</div>
+                  </div>
+                  <div>-</div>
+                  <div>Today at 11:45pm</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="flex text-sm font-normal text-gray-500 space-x-8 items-center">
+            <div>In queue since 24 mins</div>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="2"
+              stroke="currentColor"
+              class="w-5 h-5"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M8.25 4.5l7.5 7.5-7.5 7.5"
+              />
+            </svg>
+          </div>
+        </a>
+        <a href='build-page.html' class="table-row">
+          <div class="flex items-center space-x-3">
+            <div class="icon-status icon-status--failed">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-3 w-3"
+                viewBox="0 0 20 20"
+                fill="#D92D20"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                  clip-rule="evenodd"
+                ></path>
+              </svg>
+            </div>
+            <div class="flex items-center space-x-3">
+              <div class="font-medium text-gray-700 text-sm px-2 py-1 border border-gray-300 rounded-lg">
+                staging-www
+              </div>
+              <div class="flex flex-col">
+                <div class="text-gray-900 text-sm font-medium">
+                  Update ocurrent with git submodule and gitlab clone merge request fixes.
+                </div>
+                <div class="flex text-sm space-x-2">
+                  <div>e92bcee</div>
+                  <div>-</div>
+                  <div class="flex space-x-1 items-center">
+                    <svg
+                      width="14"
+                      height="14"
+                      viewBox="0 0 14 14"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M7 0C3.1325 0 0 3.1325 0 7C0 10.0975 2.00375 12.7137 4.78625 13.6413C5.13625 13.7025 5.2675 13.4925 5.2675 13.3088C5.2675 13.1425 5.25875 12.5913 5.25875 12.005C3.5 12.3288 3.045 11.5763 2.905 11.1825C2.82625 10.9812 2.485 10.36 2.1875 10.1937C1.9425 10.0625 1.5925 9.73875 2.17875 9.73C2.73 9.72125 3.12375 10.2375 3.255 10.4475C3.885 11.5062 4.89125 11.2088 5.29375 11.025C5.355 10.57 5.53875 10.2638 5.74 10.0887C4.1825 9.91375 2.555 9.31 2.555 6.6325C2.555 5.87125 2.82625 5.24125 3.2725 4.75125C3.2025 4.57625 2.9575 3.85875 3.3425 2.89625C3.3425 2.89625 3.92875 2.7125 5.2675 3.61375C5.8275 3.45625 6.4225 3.3775 7.0175 3.3775C7.6125 3.3775 8.2075 3.45625 8.7675 3.61375C10.1063 2.70375 10.6925 2.89625 10.6925 2.89625C11.0775 3.85875 10.8325 4.57625 10.7625 4.75125C11.2087 5.24125 11.48 5.8625 11.48 6.6325C11.48 9.31875 9.84375 9.91375 8.28625 10.0887C8.54 10.3075 8.75875 10.7275 8.75875 11.3837C8.75875 12.32 8.75 13.0725 8.75 13.3088C8.75 13.4925 8.88125 13.7113 9.23125 13.6413C10.6209 13.1721 11.8284 12.279 12.6839 11.0877C13.5393 9.89631 13.9996 8.46668 14 7C14 3.1325 10.8675 0 7 0Z"
+                        fill="black"
+                      />
+                    </svg>
+                    <div>#324</div>
+                  </div>
+                  <div>-</div>
+                  <div>Today at 11:45pm</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="flex text-sm font-normal text-gray-500 space-x-8 items-center">
+            <div>failed 16 mins</div>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="2"
+              stroke="currentColor"
+              class="w-5 h-5"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M8.25 4.5l7.5 7.5-7.5 7.5"
+              />
+            </svg>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
