@@ -640,10 +640,6 @@ video {
   height: 0.75rem;
 }
 
-.h-9 {
-  height: 2.25rem;
-}
-
 .max-h-0 {
   max-height: 0px;
 }
@@ -716,10 +712,6 @@ video {
   align-items: baseline;
 }
 
-.justify-center {
-  justify-content: center;
-}
-
 .justify-between {
   justify-content: space-between;
 }
@@ -787,6 +779,10 @@ video {
 .divide-gray-200 > :not([hidden]) ~ :not([hidden]) {
   --tw-divide-opacity: 1;
   border-color: rgb(229 231 235 / var(--tw-divide-opacity));
+}
+
+.overflow-auto {
+  overflow: auto;
 }
 
 .overflow-hidden {
@@ -1479,9 +1475,4 @@ select {
   height: 14px;
   transform: rotate(45deg) translate(-6px, -6px);
   position: absolute;
-}
-
-.hover\:bg-white:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }

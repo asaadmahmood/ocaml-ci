@@ -59,7 +59,7 @@
       </a>
     </div>
   </header>
-  <div class="container-fluid py-12">
+  <div class="container-fluid py-12" x-data='linkTooltip'>
     <div class="flex items-center mb-7 text-sm font-medium space-x-2">
       <a href="index.html">Organisations</a>
       <div>
@@ -166,27 +166,110 @@
     </div>
     <div
       class="container-fluid mt-8 flex flex-col "
-      x-data="{ logs: true, artefacts: false, codeCoverage: false, codeCopied: false, copyTooltip: false }"
+      x-data="{ logs: true, artefacts: false, codeCoverage: false, codeCopied: false, linkCopied: false}"
     >
-      <div class='tooltip' x-show='copyTooltip' x-transition x-ref="copyTooltipRef" @click.outside='copyTooltip = false' @click='codeCopied = true, copyTooltip = false'>
-        Copy Code
+      <button
+        class='tooltip'
+        x-show='linkTooltipVisible'
+        x-transition
+        x-ref="linkTooltipRef"
+        @click.outside='linkTooltipVisible = false'
+        @click='linkCopied = true, linkTooltipVisible = false'
+        onclick="wrapSelectedText();"
+      >
+        Copy link
         <div class="tooltip-arrow"></div>
-      </div>
-      <div class='notification' x-show='codeCopied' x-transition>
+      </button>
+
+      <!-- Code Copied Notification -->
+      <div
+        class='notification'
+        x-show='codeCopied'
+        x-transition
+      >
         <div class="flex items-center space-x-2">
           <div class="icon-status icon-status--success">
-            <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="#12B76A">
-              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+            <svg
+              class="h-4 w-4"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 20 20"
+              fill="#12B76A"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                clip-rule="evenodd"
+              ></path>
             </svg>
           </div>
           <div>Code copied successfully</div>
         </div>
-        <button class='icon-button' @click='codeCopied = false'>
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-4 h-4">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 19.5l15-15m-15 0l15 15" />
+        <button
+          class='icon-button'
+          @click='codeCopied = false'
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="2.5"
+            stroke="currentColor"
+            class="w-4 h-4"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M4.5 19.5l15-15m-15 0l15 15"
+            />
           </svg>
         </button>
       </div>
+
+      <!-- Link Copied Notification -->
+      <div
+        class='notification'
+        x-show='linkCopied'
+        x-transition
+      >
+        <div class="flex items-center space-x-2">
+          <div class="icon-status icon-status--success">
+            <svg
+              class="h-4 w-4"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 20 20"
+              fill="#12B76A"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                clip-rule="evenodd"
+              ></path>
+            </svg>
+          </div>
+          <div>Link copied successfully</div>
+        </div>
+        <button
+          class='icon-button'
+          @click='linkCopied = false'
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="2.5"
+            stroke="currentColor"
+            class="w-4 h-4"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M4.5 19.5l15-15m-15 0l15 15"
+            />
+          </svg>
+        </button>
+      </div>
+
+
       <div class="flex space-x-6 border-b border-gray-200 mb-6 text-sm ">
         <a
           href="#"
@@ -201,15 +284,15 @@
           @click="artefacts =true; codeCoverage = false; logs = false; "
         >
           <div>Artefacts</div>
-          <div
-            class="badge badge-gray">2</div>
-          </a>
-          <a href="
+          <div class="badge badge-gray">2</div>
+        </a>
+        <a
+          href="
             #"
-            class="pb-2"
-            @click="codeCoverage = true; logs = false; artefacts =false"
-            :class="{ 'text-[#175CD3] border-b-2 border-b-[#175CD3]': codeCoverage }"
-          >Code Coverage
+          class="pb-2"
+          @click="codeCoverage = true; logs = false; artefacts =false"
+          :class="{ 'text-[#175CD3] border-b-2 border-b-[#175CD3]': codeCoverage }"
+        >Code Coverage
         </a>
       </div>
       <div
@@ -217,9 +300,7 @@
         x-data="{stepsToRepro: true}"
       >
         <div class='shadow-sm rounded-lg overflow-hidden border border-gray-200 divide-x divide-gray-200'>
-          <div
-            class="flex items-center justify-between px-4 py-3 bg-white"
-          >
+          <div class="flex items-center justify-between px-4 py-3 bg-white">
             <div
               @click="stepsToRepro = !stepsToRepro"
               class="bg-gray-50  text-gray-900 text-base font-medium border-b-none border-gray-200 flex items-center space-x-3 flex-1 cursor-pointer"
@@ -304,7 +385,11 @@
           20
           21
   </code></div>
-          <pre class="bg-gray-900 px-6 py-3 rounded-lg rounded-l-none text-gray-300 flex-1" x-on:click='copyTooltip = true, $refs.copyTooltipRef.style.left = `${$event.pageX-50}px`, $refs.copyTooltipRef.style.top = `${$event.pageY-50}px`'><code>FROM ocaml/opam@sha256:4d2dfd672896a4ffd168c4b7acf39a2506f5ccf70cdbc660382ecff265faafe9
+          <div class='flex overflow-auto'>
+<pre
+  class="bg-gray-900 px-6 py-3 rounded-lg rounded-l-none text-gray-300 flex-1"
+  x-on:click='showLinkTooltip, $refs.linkTooltipRef.style.left = `${$event.pageX-50}px`, $refs.linkTooltipRef.style.top = `${$event.pageY-50}px`'
+><code>FROM ocaml/opam@sha256:4d2dfd672896a4ffd168c4b7acf39a2506f5ccf70cdbc660382ecff265faafe9
 # alpine-3.14-4.14_opam-2.1
 USER 1000:1000
 <code class="text-blue-300">RUN sudo ln -f /usr/bin/opam-2.1 /usr/bin/opam</code>
@@ -325,6 +410,7 @@ RUN opam pin add -yn current_web.dev 'ocurrent/' && \
     opam pin add -yn current_rpc.dev 'ocurrent/' && \
     opam pin add -yn current_gitlab.dev 'ocurrent/' && \
     opam pin add -yn current_github.dev 'ocurrent/' && \</code></code></pre>
+          </div>
         </div>
       </div>
       <div x-show="artefacts">
@@ -335,6 +421,32 @@ RUN opam pin add -yn current_web.dev 'ocurrent/' && \
       </div>
     </div>
   </div>
+
+  <script>
+    document.addEventListener('alpine:init', () => {
+        Alpine.data('linkTooltip', () => ({
+            linkTooltipVisible: false,
+
+            showLinkTooltip() {
+                console.log('asd');
+                var selection = window.getSelection().getRangeAt(0);
+                if (selection.endOffset != selection.startOffset) {
+                  this.linkTooltipVisible = true;
+                }
+            }
+        }))
+    })
+
+    function wrapSelectedText() {
+      var selection = window.getSelection().getRangeAt(0);
+      var selectedText = selection.extractContents();
+      console.log(selection);
+      var span = document.createElement("span");
+      span.style.backgroundColor = "#cc880087";
+      span.appendChild(selectedText);
+      selection.insertNode(span);
+    }
+  </script>
 </body>
 
 </html>
