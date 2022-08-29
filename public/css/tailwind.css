@@ -808,16 +808,6 @@ video {
   border-bottom-left-radius: 0px;
 }
 
-.rounded-r {
-  border-top-right-radius: 0.25rem;
-  border-bottom-right-radius: 0.25rem;
-}
-
-.rounded-b {
-  border-bottom-right-radius: 0.25rem;
-  border-bottom-left-radius: 0.25rem;
-}
-
 .border {
   border-width: 1px;
 }
@@ -1000,16 +990,6 @@ video {
 .text-gray-300 {
   --tw-text-opacity: 1;
   color: rgb(209 213 219 / var(--tw-text-opacity));
-}
-
-.text-blue-300 {
-  --tw-text-opacity: 1;
-  color: rgb(147 197 253 / var(--tw-text-opacity));
-}
-
-.text-green-300 {
-  --tw-text-opacity: 1;
-  color: rgb(134 239 172 / var(--tw-text-opacity));
 }
 
 .shadow-sm {
@@ -1485,4 +1465,73 @@ select {
   height: 14px;
   transform: rotate(45deg) translate(-6px, -6px);
   position: absolute;
+}
+
+.code-line {
+  display: flex;
+}
+
+.code-line:first-child .code-line__number, 
+.code-line:first-child .code-line__code {
+  padding-top: 0.75rem;
+}
+
+.code-line:last-child .code-line__number, 
+.code-line:last-child .code-line__code {
+  padding-bottom: 0.75rem;
+}
+
+.code-line__number {
+  width: 3.5rem;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  --tw-bg-opacity: 1;
+  background-color: rgb(31 41 55 / var(--tw-bg-opacity));
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  --tw-text-opacity: 1;
+  color: rgb(156 163 175 / var(--tw-text-opacity));
+}
+
+.code-line__code {
+  flex: 1 1 0%;
+  white-space: pre;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  --tw-text-opacity: 1;
+  color: rgb(209 213 219 / var(--tw-text-opacity));
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  border-left: 1px solid transparent;
+}
+
+.code-line.highlight {
+}
+
+.code-line.highlight .code-line__code {
+  background-color: rgb(204 136 0 / 32%);
+  border-left: 1px solid rgb(204 136 0 / 64%);
+}
+
+.copy-link-btn {
+  position: absolute;
+  left: -0.75rem;
+  top: 0px;
+  display: flex;
+  height: 1.75rem;
+  width: 1.75rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.25rem;
+  border-width: 1px;
+  --tw-border-opacity: 1;
+  border-color: rgb(209 213 219 / var(--tw-border-opacity));
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+
+.copy-link-btn:hover {
+  --tw-text-opacity: 1;
+  color: rgb(59 130 246 / var(--tw-text-opacity));
 }

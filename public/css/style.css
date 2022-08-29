@@ -197,3 +197,41 @@ select {
   transform: rotate(45deg) translate(-6px, -6px);
   position: absolute;
 }
+
+.code-line {
+  display: flex;
+}
+
+.code-line:first-child .code-line__number,
+.code-line:first-child .code-line__code {
+  @apply pt-3;
+}
+
+.code-line:last-child .code-line__number,
+.code-line:last-child .code-line__code {
+  @apply pb-3;
+}
+
+.code-line__number {
+  @apply bg-gray-800 px-6 w-14 text-gray-400 cursor-pointer select-none;
+}
+
+.code-line__code {
+  @apply px-6 text-gray-300 whitespace-pre flex-1;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  border-left: 1px solid transparent;
+
+}
+
+.code-line.highlight {
+
+}
+
+.code-line.highlight .code-line__code {
+  background-color: rgb(204 136 0 / 32%);
+  border-left: 1px solid rgb(204 136 0 / 64%);
+}
+
+.copy-link-btn {
+  @apply bg-white absolute -left-3 top-0 rounded w-7 h-7 flex items-center justify-center border border-gray-300 hover:text-blue-500;
+}
