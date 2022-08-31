@@ -175,7 +175,7 @@ select {
 }
 
 .flash-message {
-  @apply bg-green-50 border border-green-200 text-green-600 flex items-center text-sm font-medium rounded-lg py-3 px-3 justify-between mt-4;
+  @apply bg-green-50 border border-green-200 text-green-600 flex items-center text-sm font-medium rounded-lg py-3 px-3 justify-between;
 }
 
 .icon-button {
