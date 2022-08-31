@@ -275,3 +275,11 @@ select {
 .link-hover:hover {
   @apply text-blue-600;
 }
+
+.text-stroke {
+  font-size: 180px;
+  font-weight: bold;
+  line-height: 1;
+  -webkit-text-stroke: 2px #444;
+  -webkit-text-fill-color: white;
+}
