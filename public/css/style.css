@@ -267,3 +267,7 @@ select {
 .prose {
   max-width: 100%;
 }
+
+.link-hover:hover {
+  @apply text-blue-600;
+}

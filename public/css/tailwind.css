@@ -2212,3 +2212,8 @@ select {
 .prose {
   max-width: 100%;
 }
+
+.link-hover:hover {
+  --tw-text-opacity: 1;
+  color: rgb(37 99 235 / var(--tw-text-opacity));
+}
