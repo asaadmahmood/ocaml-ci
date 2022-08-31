@@ -164,6 +164,51 @@
         </button>
       </div>
     </div>
+
+          <!-- Code Copied Notification -->
+          <div
+          class='flash-message'
+          x-transition
+        >
+          <div class="flex items-center space-x-2">
+            <div class="icon-status icon-status--success">
+              <svg
+                class="h-4 w-4"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 20 20"
+                fill="#12B76A"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                  clip-rule="evenodd"
+                ></path>
+              </svg>
+            </div>
+            <div>Rebuilding successfully</div>
+          </div>
+          <button
+            class='icon-button'
+            @click='codeCopied = false'
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="2.5"
+              stroke="currentColor"
+              class="w-4 h-4"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M4.5 19.5l15-15m-15 0l15 15"
+              />
+            </svg>
+          </button>
+        </div>
+
+
     <div
       class="container-fluid mt-8 flex flex-col "
       x-data="{ logs: true, artefacts: false, codeCoverage: false, codeCopied: false, linkCopied: false, startingLine: null, endingLine: null}"
