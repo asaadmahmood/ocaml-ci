@@ -12,6 +12,7 @@
     content="width=device-width, initial-scale=1.0"
   />
   <title>OCaml</title>
+  <script src="https://cdn.jsdelivr.net/npm/@ryangjchandler/alpine-clipboard@2.x.x/dist/alpine-clipboard.js" defer></script>
   <script
     defer
     src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"
@@ -358,7 +359,7 @@
               <div>Steps to Reproduce</div>
             </div>
             <button
-              @click='codeCopied = true'
+              @click='codeCopied = true, $clipboard($refs.reproCode.innerText)'
               class="btn btn-sm btn-default"
             >
               <svg
@@ -391,7 +392,7 @@
                 4
               </code>
             </div>
-            <div class="bg-gray-900 px-6 py-3 rounded-lg rounded-l-none text-gray-300 w-full rounded-t-none"><code>git clone --recursive "https://github.com/ocaml/merlin.git" -b "master" && cd "merlin" && git reset --hard be753d94
+            <div class="bg-gray-900 px-6 py-3 rounded-lg rounded-l-none text-gray-300 w-full rounded-t-none"><code x-ref='reproCode'>git clone --recursive "https://github.com/ocaml/merlin.git" -b "master" && cd "merlin" && git reset --hard be753d94
             cat > Dockerfile <<'END-OF-DOCKERFILE'</code></div>
           </div>
         </div>
@@ -561,7 +562,8 @@
                   }
 
                   location.href = this.url;
-                  navigator.clipboard.writeText(this.url);
+                  // navigator.clipboard.writeText(this.url);
+                  this.$clipboard(this.url);
                   this.manualSelection = false;
                 },
 
