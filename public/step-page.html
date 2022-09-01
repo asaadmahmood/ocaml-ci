@@ -167,6 +167,7 @@
 
           <!-- Code Copied Notification -->
           <div
+          x-cloack
           class='flash-message mt-8'
           x-transition
         >
@@ -211,10 +212,11 @@
 
     <div
       class="container-fluid mt-8 flex flex-col "
-      x-data="{ logs: true, artefacts: false, codeCoverage: false, codeCopied: false, linkCopied: false, startingLine: null, endingLine: null}"
+      x-data="{ url: window.location.href, logs: true, artefacts: false, codeCoverage: false, codeCopied: false, linkCopied: false, startingLine: null, endingLine: null, manualSelection: false}"
     >
       <!-- Code Copied Notification -->
       <div
+        x-cloak
         class='notification'
         x-show='codeCopied'
         x-transition
@@ -259,6 +261,7 @@
 
       <!-- Link Copied Notification -->
       <div
+        x-cloak
         class='notification'
         x-show='linkCopied'
         x-transition
@@ -393,134 +396,134 @@
           </div>
         </div>
 
-        <div class="mt-6 bg-gray-900 rounded-lg relative" x-data='codeLink'>
-            <button class='copy-link-btn' @click='linkCopied = true' x-show='startingLine' x-ref='copyLinkBtn'>
+        <div class="mt-6 bg-gray-900 rounded-lg relative" x-data='codeLink' x-init='highlightLine'>
+            <button class='copy-link-btn' @click='copyCode' x-show='manualSelection' x-ref='copyLinkBtn'>
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M13.19 8.688a4.5 4.5 0 011.242 7.244l-4.5 4.5a4.5 4.5 0 01-6.364-6.364l1.757-1.757m13.35-.622l1.757-1.757a4.5 4.5 0 00-6.364-6.364l-4.5 4.5a4.5 4.5 0 001.242 7.244" />
                 </svg>
             </button>
           <div class='overflow-auto'>
-            <div class='code-line' x-init='console.log($el.dataset.lineNumber)' :class="$el.dataset.lineNumber >= startingLine && $el.dataset.lineNumber <= endingLine ? 'highlight' : ''" @click='highlightLine' data-line-number='1'>
+            <div class='code-line' :class="parseInt($el.id.substring(1, $el.id.length)) >= startingLine && parseInt($el.id.substring(1, $el.id.length)) <= endingLine ? 'highlight' : ''" @click='highlightLine' id='L1'>
               <div class='code-line__number'>
                 1
               </div>
               <div class='code-line__code'>FROM ocaml/opam@sha256:4d2dfd672896a4ffd168c4b7acf39a2506f5ccf70cdbc660382ecff265faafe9</div>
             </div>
-            <div class='code-line' :class="$el.dataset.lineNumber >= startingLine && $el.dataset.lineNumber <= endingLine ? 'highlight' : ''" @click='highlightLine' data-line-number='2'>
+            <div class='code-line' :class="parseInt($el.id.substring(1, $el.id.length)) >= startingLine && parseInt($el.id.substring(1, $el.id.length)) <= endingLine ? 'highlight' : ''" @click='highlightLine' id='L2'>
               <div class='code-line__number'>
                 2
               </div>
               <div class='code-line__code'># alpine-3.14-4.14_opam-2.1</div>
             </div>
-            <div class='code-line' :class="$el.dataset.lineNumber >= startingLine && $el.dataset.lineNumber <= endingLine ? 'highlight' : ''" @click='highlightLine' data-line-number='3'>
+            <div class='code-line' :class="parseInt($el.id.substring(1, $el.id.length)) >= startingLine && parseInt($el.id.substring(1, $el.id.length)) <= endingLine ? 'highlight' : ''" @click='highlightLine' id='L3'>
               <div class='code-line__number'>
                 3
               </div>
               <div class='code-line__code'>USER 1000:1000</div>
             </div>
-            <div class='code-line' :class="$el.dataset.lineNumber >= startingLine && $el.dataset.lineNumber <= endingLine ? 'highlight' : ''" @click='highlightLine' data-line-number='4'>
+            <div class='code-line' :class="parseInt($el.id.substring(1, $el.id.length)) >= startingLine && parseInt($el.id.substring(1, $el.id.length)) <= endingLine ? 'highlight' : ''" @click='highlightLine' id='L4'>
               <div class='code-line__number'>
                 4
               </div>
               <div class='code-line__code'>RUN sudo ln -f /usr/bin/opam-2.1 /usr/bin/opam</div>
             </div>
-            <div class='code-line' :class="$el.dataset.lineNumber >= startingLine && $el.dataset.lineNumber <= endingLine ? 'highlight' : ''" @click='highlightLine' data-line-number='5'>
+            <div class='code-line' :class="parseInt($el.id.substring(1, $el.id.length)) >= startingLine && parseInt($el.id.substring(1, $el.id.length)) <= endingLine ? 'highlight' : ''" @click='highlightLine' id='L5'>
               <div class='code-line__number'>
                 5
               </div>
               <div class='code-line__code'>WORKDIR /src</div>
             </div>
-            <div class='code-line' :class="$el.dataset.lineNumber >= startingLine && $el.dataset.lineNumber <= endingLine ? 'highlight' : ''" @click='highlightLine' data-line-number='6'>
+            <div class='code-line' :class="parseInt($el.id.substring(1, $el.id.length)) >= startingLine && parseInt($el.id.substring(1, $el.id.length)) <= endingLine ? 'highlight' : ''" @click='highlightLine' id='L6'>
               <div class='code-line__number'>
                 6
               </div>
               <div class='code-line__code'>RUN sudo chown opam /src</div>
             </div>
-            <div class='code-line' :class="$el.dataset.lineNumber >= startingLine && $el.dataset.lineNumber <= endingLine ? 'highlight' : ''" @click='highlightLine' data-line-number='7'>
+            <div class='code-line' :class="parseInt($el.id.substring(1, $el.id.length)) >= startingLine && parseInt($el.id.substring(1, $el.id.length)) <= endingLine ? 'highlight' : ''" @click='highlightLine' id='L7'>
               <div class='code-line__number'>
                 7
               </div>
               <div class='code-line__code'>RUN cd ~/opam-repository && (git cat-file -e bc8df14f0d08de7b76d0d43a043cbd0c5f356dec || git fetch origin master) && git reset -q --hard bc8df14f0d08de7b76d0d43a043cbd0c5f356dec && git log --no-decorate -n1 --oneline && opam update -u</div>
             </div>
-            <div class='code-line' :class="$el.dataset.lineNumber >= startingLine && $el.dataset.lineNumber <= endingLine ? 'highlight' : ''" @click='highlightLine' data-line-number='8'>
+            <div class='code-line' :class="parseInt($el.id.substring(1, $el.id.length)) >= startingLine && parseInt($el.id.substring(1, $el.id.length)) <= endingLine ? 'highlight' : ''" @click='highlightLine' id='L8'>
               <div class='code-line__number'>
                 8
               </div>
               <div class='code-line__code'>RUN mkdir -p 'ocurrent/' 'ocluster/' 'ocluster/obuilder/' 'ocluster/' 'ocaml-version/' 'ocaml-matrix/' 'ocaml-dockerfile/'</div>
             </div>
-            <div class='code-line' :class="$el.dataset.lineNumber >= startingLine && $el.dataset.lineNumber <= endingLine ? 'highlight' : ''" @click='highlightLine' data-line-number='9'>
+            <div class='code-line' :class="parseInt($el.id.substring(1, $el.id.length)) >= startingLine && parseInt($el.id.substring(1, $el.id.length)) <= endingLine ? 'highlight' : ''" @click='highlightLine' id='L9'>
               <div class='code-line__number'>
                 9
               </div>
               <div class='code-line__code'>COPY --chown=1000:1000 ocurrent/current_web.opam ocurrent/current_slack.opam ocurrent/current_rpc.opam ocurrent/current_gitlab.opam ocurrent/current_github.opam ocurrent/current_git.opam ocurrent/current_examples.opam ocurrent/current_docker.opam ocurrent/current.opam ocurrent/</div>
             </div>
-            <div class='code-line' :class="$el.dataset.lineNumber >= startingLine && $el.dataset.lineNumber <= endingLine ? 'highlight' : ''" @click='highlightLine' data-line-number='10'>
+            <div class='code-line' :class="parseInt($el.id.substring(1, $el.id.length)) >= startingLine && parseInt($el.id.substring(1, $el.id.length)) <= endingLine ? 'highlight' : ''" @click='highlightLine' id='L10'>
               <div class='code-line__number'>
                 10
               </div>
               <div class='code-line__code'>COPY --chown=1000:1000 ocluster/ocluster.opam ocluster/ocluster-api.opam ocluster/</div>
             </div>
-            <div class='code-line' :class="$el.dataset.lineNumber >= startingLine && $el.dataset.lineNumber <= endingLine ? 'highlight' : ''" @click='highlightLine' data-line-number='11'>
+            <div class='code-line' :class="parseInt($el.id.substring(1, $el.id.length)) >= startingLine && parseInt($el.id.substring(1, $el.id.length)) <= endingLine ? 'highlight' : ''" @click='highlightLine' id='L11'>
               <div class='code-line__number'>
                 11
               </div>
               <div class='code-line__code'>COPY --chown=1000:1000 ocluster/obuilder/obuilder.opam ocluster/obuilder/obuilder-spec.opam ocluster/obuilder/</div>
             </div>
-            <div class='code-line' :class="$el.dataset.lineNumber >= startingLine && $el.dataset.lineNumber <= endingLine ? 'highlight' : ''" @click='highlightLine' data-line-number='12'>
+            <div class='code-line' :class="parseInt($el.id.substring(1, $el.id.length)) >= startingLine && parseInt($el.id.substring(1, $el.id.length)) <= endingLine ? 'highlight' : ''" @click='highlightLine' id='L12'>
               <div class='code-line__number'>
                 12
               </div>
               <div class='code-line__code'>COPY --chown=1000:1000 ocluster/current_ocluster.opam ocluster/</div>
             </div>
-            <div class='code-line' :class="$el.dataset.lineNumber >= startingLine && $el.dataset.lineNumber <= endingLine ? 'highlight' : ''" @click='highlightLine' data-line-number='13'>
+            <div class='code-line' :class="parseInt($el.id.substring(1, $el.id.length)) >= startingLine && parseInt($el.id.substring(1, $el.id.length)) <= endingLine ? 'highlight' : ''" @click='highlightLine' id='L13'>
               <div class='code-line__number'>
                 13
               </div>
               <div class='code-line__code'>COPY --chown=1000:1000 ocaml-version/ocaml-version.opam ocaml-version/</div>
             </div>
-            <div class='code-line' :class="$el.dataset.lineNumber >= startingLine && $el.dataset.lineNumber <= endingLine ? 'highlight' : ''" @click='highlightLine' data-line-number='14'>
+            <div class='code-line' :class="parseInt($el.id.substring(1, $el.id.length)) >= startingLine && parseInt($el.id.substring(1, $el.id.length)) <= endingLine ? 'highlight' : ''" @click='highlightLine' id='L14'>
               <div class='code-line__number'>
                 14
               </div>
               <div class='code-line__code'>COPY --chown=1000:1000 ocaml-matrix/matrix-stos.opam ocaml-matrix/matrix-server.opam ocaml-matrix/matrix-current.opam ocaml-matrix/matrix-ctos.opam ocaml-matrix/matrix-common.opam ocaml-matrix/matrix-ci-server.opam ocaml-matrix/matrix-ci-server-setup.opam ocaml-matrix/</div>
             </div>
-            <div class='code-line' :class="$el.dataset.lineNumber >= startingLine && $el.dataset.lineNumber <= endingLine ? 'highlight' : ''" @click='highlightLine' data-line-number='15'>
+            <div class='code-line' :class="parseInt($el.id.substring(1, $el.id.length)) >= startingLine && parseInt($el.id.substring(1, $el.id.length)) <= endingLine ? 'highlight' : ''" @click='highlightLine' id='L15'>
               <div class='code-line__number'>
                 15
               </div>
               <div class='code-line__code'>COPY --chown=1000:1000 ocaml-dockerfile/dockerfile.opam ocaml-dockerfile/dockerfile-opam.opam ocaml-dockerfile/dockerfile-cmd.opam ocaml-dockerfile/</div>
             </div>
-            <div class='code-line' :class="$el.dataset.lineNumber >= startingLine && $el.dataset.lineNumber <= endingLine ? 'highlight' : ''" @click='highlightLine' data-line-number='16'>
+            <div class='code-line' :class="parseInt($el.id.substring(1, $el.id.length)) >= startingLine && parseInt($el.id.substring(1, $el.id.length)) <= endingLine ? 'highlight' : ''" @click='highlightLine' id='L16'>
               <div class='code-line__number'>
                 16
               </div>
               <div class='code-line__code'>COPY --chown=1000:1000 ocaml-ci-web.opam ocaml-ci-solver.opam ocaml-ci-service.opam ocaml-ci-client.opam ocaml-ci-api.opam ./</div>
             </div>
-            <div class='code-line' :class="$el.dataset.lineNumber >= startingLine && $el.dataset.lineNumber <= endingLine ? 'highlight' : ''" @click='highlightLine' data-line-number='17'>
+            <div class='code-line' :class="parseInt($el.id.substring(1, $el.id.length)) >= startingLine && parseInt($el.id.substring(1, $el.id.length)) <= endingLine ? 'highlight' : ''" @click='highlightLine' id='L17'>
               <div class='code-line__number'>
                 17
               </div>
               <div class='code-line__code'>RUN opam pin add -yn current_web.dev 'ocurrent/' && \</div>
             </div>
-            <div class='code-line' :class="$el.dataset.lineNumber >= startingLine && $el.dataset.lineNumber <= endingLine ? 'highlight' : ''" @click='highlightLine' data-line-number='18'>
+            <div class='code-line' :class="parseInt($el.id.substring(1, $el.id.length)) >= startingLine && parseInt($el.id.substring(1, $el.id.length)) <= endingLine ? 'highlight' : ''" @click='highlightLine' id='L18'>
               <div class='code-line__number'>
                 18
               </div>
               <div class='code-line__code'>    opam pin add -yn current_slack.dev 'ocurrent/' && \</div>
             </div>
-            <div class='code-line' :class="$el.dataset.lineNumber >= startingLine && $el.dataset.lineNumber <= endingLine ? 'highlight' : ''" @click='highlightLine' data-line-number='19'>
+            <div class='code-line' :class="parseInt($el.id.substring(1, $el.id.length)) >= startingLine && parseInt($el.id.substring(1, $el.id.length)) <= endingLine ? 'highlight' : ''" @click='highlightLine' id='L19'>
               <div class='code-line__number'>
                 19
               </div>
               <div class='code-line__code'>    opam pin add -yn current_rpc.dev 'ocurrent/' && \</div>
             </div>
-            <div class='code-line' :class="$el.dataset.lineNumber >= startingLine && $el.dataset.lineNumber <= endingLine ? 'highlight' : ''" @click='highlightLine' data-line-number='20'>
+            <div class='code-line' :class="parseInt($el.id.substring(1, $el.id.length)) >= startingLine && parseInt($el.id.substring(1, $el.id.length)) <= endingLine ? 'highlight' : ''" @click='highlightLine' id='L20'>
               <div class='code-line__number'>
                 20
               </div>
               <div class='code-line__code'>    opam pin add -yn current_gitlab.dev 'ocurrent/' && \</div>
             </div>
-            <div class='code-line' :class="$el.dataset.lineNumber >= startingLine && $el.dataset.lineNumber <= endingLine ? 'highlight' : ''" @click='highlightLine' data-line-number='21'>
+            <div class='code-line' :class="parseInt($el.id.substring(1, $el.id.length)) >= startingLine && parseInt($el.id.substring(1, $el.id.length)) <= endingLine ? 'highlight' : ''" @click='highlightLine' id='L21'>
               <div class='code-line__number'>
                 21
               </div>
@@ -543,37 +546,72 @@
             Alpine.data('codeLink', () => ({
                 permalinkButton: false,
 
+                copyCode(e) {
+                  this.linkCopied = true;
+                  const index = this.url.indexOf("#");
+
+                  if (index >= 0) {
+                    this.url = this.url.substring(0, index);
+                  }
+
+                  if (this.endingLine) {
+                    this.url += `#L${this.startingLine}-${this.endingLine}`;
+                  } else {
+                    this.url += `#L${this.startingLine}`;
+                  }
+
+                  location.href = this.url;
+                  navigator.clipboard.writeText(this.url);
+                  this.manualSelection = false;
+                },
+
                 positionCopyButton(e) {
-                    console.log(e);
                     this.$refs.copyLinkBtn.style.top = `${e.layerY-15}px`;
                 },
 
                 highlightLine(e) {
-                    const currentLine = parseInt(e.path[1].dataset.lineNumber);
-                    this.positionCopyButton(e);
+                    if (e) {
+                      const currentLine = e.path[1].id;
+                      const currentID = parseInt(currentLine.substring(1, currentLine.length));
+                      this.manualSelection = true;
+                      this.positionCopyButton(e);
 
-                    if (!this.startingLine) {
-                        this.startingLine = currentLine;
-                        this.endingLine = currentLine;
-                    }
+                      if (!this.startingLine) {
+                          this.startingLine = currentID;
+                          this.endingLine = currentID;
+                          console.log(this.startingLine);
+                      }
 
-                    if (this.startingLine) {
-                        if (e.shiftKey) {
-                            if (currentLine > this.startingLine) {
-                                this.endingLine = currentLine;
-                            } else if (currentLine < this.startingLine) {
-                                this.endingLine = this.startingLine;
-                                this.startingLine = currentLine;
-                            } else {
-                                console.log('else');
-                                this.startingLine = currentLine;
-                                this.endingLine = currentLine;
-                            }
-                        } else {
-                            this.startingLine = currentLine;
-                            this.endingLine = currentLine;
-                            this.linkCopied = false;
-                        }
+                      if (this.startingLine) {
+                          if (e.shiftKey) {
+                              if (currentID > this.startingLine) {
+                                  this.endingLine = currentID;
+                              } else if (currentID < this.startingLine) {
+                                  this.endingLine = this.startingLine;
+                                  this.startingLine = currentID;
+                              } else {
+                                  this.startingLine = currentID;
+                                  this.endingLine = currentID;
+                              }
+                          } else {
+                              this.startingLine = currentID;
+                              this.endingLine = currentID;
+                              this.linkCopied = false;
+                          }
+                      }
+                    } else {
+                      const index = this.url.indexOf("#")+2;
+
+                      if (index >= 0) {
+                        const lines = this.url.substring(index, this.url.length);
+                        const lineNumbers = lines.split("-");
+                        this.startingLine = parseInt(lineNumbers[0]);
+                        this.endingLine = parseInt(lineNumbers[1]);
+                      }
+
+                      setTimeout(() => {
+                        document.getElementById(`L${this.startingLine}`).scrollIntoView();
+                      }, 500)
                     }
                 }
             }))

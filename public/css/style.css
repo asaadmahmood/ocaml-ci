@@ -171,6 +171,7 @@ select {
 
 .notification {
   @apply bg-white fixed bottom-6 right-6 flex items-center text-sm font-medium rounded-lg shadow-lg p-4 justify-between;
+  z-index: 9999;
   min-width: 400px;
 }
 
@@ -282,4 +283,8 @@ select {
   line-height: 1;
   -webkit-text-stroke: 2px #444;
   -webkit-text-fill-color: white;
+}
+
+.x-cloak {
+  display: none !important;
 }
