@@ -176,24 +176,6 @@ select {
   @apply bg-gray-100 text-gray-700;
 }
 
-.notification {
-  @apply bg-white fixed bottom-6 right-6 flex items-center text-sm font-medium rounded-lg shadow-lg p-4 justify-between;
-  z-index: 9999;
-  min-width: 400px;
-}
-
-.flash-message {
-  @apply bg-green-50 border border-green-200 text-green-600 flex items-center text-sm font-medium rounded-lg py-3 px-3 justify-between;
-}
-
-.flash-message.flash-message--error {
-  @apply bg-red-50 border-red-200 text-red-600;
-}
-
-.flash-message.flash-message--info {
-  @apply bg-blue-50 border-blue-200 text-blue-600;
-}
-
 .icon-button {
   @apply hover:bg-gray-100 transition-colors h-8 w-8 flex items-center justify-center rounded;
 }
@@ -304,3 +286,34 @@ select {
   display: none !important;
 }
 
+/* Flash messages and notifications */
+
+.notification {
+  @apply bg-white fixed bottom-6 right-6 flex items-center text-sm font-medium rounded-lg shadow-lg p-4 justify-between;
+  z-index: 9999;
+  min-width: 400px;
+}
+
+.flash-message {
+  @apply bg-green-50 border border-green-200 text-green-600 flex items-center text-sm font-medium rounded-lg py-3 px-3 justify-between;
+}
+
+.flash-message.flash-message--error {
+  @apply bg-red-50 border-red-200 text-red-600;
+}
+
+.flash-message.flash-message--info {
+  @apply bg-blue-50 border-blue-200 text-blue-600;
+}
+
+.flash-message .icon-button:hover {
+  @apply bg-green-100;
+}
+
+.flash-message--info .icon-button:hover {
+  @apply bg-blue-100;
+}
+
+.flash-message--error .icon-button:hover {
+  @apply bg-red-100;
+}
