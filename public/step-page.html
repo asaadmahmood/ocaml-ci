@@ -147,9 +147,11 @@
 
           <!-- Code Copied Notification -->
           <div
-          x-cloack
+          x-data='{flashMessage: true}'
+          x-cloak
           class='flash-message mt-8'
           x-transition
+          x-show='flashMessage'
         >
           <div class="flex items-center space-x-2">
             <div class="icon-status icon-status--success">
@@ -170,7 +172,7 @@
           </div>
           <button
             class='icon-button'
-            @click='codeCopied = false'
+            @click='flashMessage = false'
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
