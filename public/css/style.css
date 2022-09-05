@@ -88,8 +88,12 @@ table tr:last-child td:last-child {
   @apply bg-green-50;
 }
 
-.icon-status--failed {
+.icon-status--error {
   @apply bg-red-50;
+}
+
+.icon-status--info {
+  @apply bg-blue-50;
 }
 
 .icon-status--default {
@@ -180,6 +184,14 @@ select {
 
 .flash-message {
   @apply bg-green-50 border border-green-200 text-green-600 flex items-center text-sm font-medium rounded-lg py-3 px-3 justify-between;
+}
+
+.flash-message.flash-message--error {
+  @apply bg-red-50 border-red-200 text-red-600;
+}
+
+.flash-message.flash-message--info {
+  @apply bg-blue-50 border-blue-200 text-blue-600;
 }
 
 .icon-button {

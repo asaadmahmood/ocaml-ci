@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta
+        http-equiv="X-UA-Compatible"
+        content="IE=edge"
+    />
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    />
+    <title>OCaml</title>
+    <script
+        src="https://cdn.jsdelivr.net/npm/@ryangjchandler/alpine-clipboard@2.x.x/dist/alpine-clipboard.js"
+        defer
+    ></script>
+    <script
+        defer
+        src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    />
+    <link
+        rel="stylesheet"
+        href="./css/tailwind.css"
+    />
+</head>
+
+<body class="">
+    <header class="h-20 flex items-center border-b border-gray-200 bg-white sticky top-0 z-50">
+        <div class="container-fluid flex space-x-6 items-end">
+            <a href="index.html">
+                <img
+                    src="images/logo.svg"
+                    width="116px"
+                    height="32px"
+                />
+            </a>
+            <div class='space-x-4'>
+                <a
+                    href='#'
+                    class='header-link link-hover'
+                >Getting Started</a>
+                <a
+                    href='docs.html'
+                    class='header-link link-hover'
+                >Documentation</a>
+            </div>
+        </div>
+    </header>
+    <div class="container-fluid py-12">
+
+
+        <!-- Flash Message Success -->
+        <div
+            x-data='{flashMessage: true}'
+            x-cloak
+            class='flash-message mt-8'
+            x-transition
+            x-show='flashMessage'
+        >
+            <div class="flex items-center space-x-2">
+                <div class="icon-status">
+                    <svg
+                        class="h-4 w-4"
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 20 20"
+                        fill="#12B76A"
+                    >
+                        <path
+                            fill-rule="evenodd"
+                            d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                            clip-rule="evenodd"
+                        ></path>
+                    </svg>
+                </div>
+                <div>Rebuilding successfully</div>
+            </div>
+            <button
+                class='icon-button'
+                @click='flashMessage = false'
+            >
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="2.5"
+                    stroke="currentColor"
+                    class="w-4 h-4"
+                >
+                    <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M4.5 19.5l15-15m-15 0l15 15"
+                    />
+                </svg>
+            </button>
+        </div>
+
+        <!-- Flash Message Success -->
+        <div
+            x-data='{flashMessage: true}'
+            x-cloak
+            class='flash-message mt-8 flash-message--error'
+            x-transition
+            x-show='flashMessage'
+        >
+            <div class="flex items-center space-x-2">
+                <div class="icon-status">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                      </svg>
+                </div>
+                <div>Rebuilding failed</div>
+            </div>
+            <button
+                class='icon-button'
+                @click='flashMessage = false'
+            >
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="2.5"
+                    stroke="currentColor"
+                    class="w-4 h-4"
+                >
+                    <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M4.5 19.5l15-15m-15 0l15 15"
+                    />
+                </svg>
+            </button>
+        </div>
+
+        <!-- Flash Message Success -->
+        <div
+            x-data='{flashMessage: true}'
+            x-cloak
+            class='flash-message flash-message--info mt-8'
+            x-transition
+            x-show='flashMessage'
+        >
+            <div class="flex items-center space-x-2">
+                <div class="icon-status">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z" />
+                      </svg>
+                </div>
+                <div>Some info message...</div>
+            </div>
+            <button
+                class='icon-button'
+                @click='flashMessage = false'
+            >
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="2.5"
+                    stroke="currentColor"
+                    class="w-4 h-4"
+                >
+                    <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M4.5 19.5l15-15m-15 0l15 15"
+                    />
+                </svg>
+            </button>
+        </div>
+    </div>
+</body>
+
+</html>
