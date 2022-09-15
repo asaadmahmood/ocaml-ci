@@ -554,7 +554,7 @@
 
                 highlightLine(e) {
                     if (e) {
-                      const currentLine = e.path[1].id;
+                      const currentLine = e.target.parentNode.id;
                       const currentID = parseInt(currentLine.substring(1, currentLine.length));
                       this.manualSelection = true;
                       this.positionCopyButton(e);
@@ -592,9 +592,12 @@
                         this.endingLine = parseInt(lineNumbers[1]);
                       }
 
-                      setTimeout(() => {
-                        document.getElementById(`L${this.startingLine}`).scrollIntoView();
-                      }, 500)
+                      if (this.startingLine) {
+                        setTimeout(() => {
+                          console.log(this.startingLine);
+                          document.getElementById(`L${this.startingLine}`).scrollIntoView();
+                        }, 500)
+                      }
                     }
                 }
             }))
