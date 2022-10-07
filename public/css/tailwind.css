@@ -2142,7 +2142,7 @@ select {
 }
 
 .code-line__number {
-  width: 3.5rem;
+  min-width: 3.5rem;
   cursor: pointer;
   -webkit-user-select: none;
      -moz-user-select: none;

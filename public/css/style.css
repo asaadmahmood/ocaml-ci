@@ -215,7 +215,8 @@ select {
 }
 
 .code-line__number {
-  @apply bg-gray-800 px-6 w-14 text-gray-400 cursor-pointer select-none;
+  min-width: 3.5rem;
+  @apply bg-gray-800 px-6 text-gray-400 cursor-pointer select-none;
 }
 
 .code-line__code {
