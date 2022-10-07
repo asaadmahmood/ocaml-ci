@@ -384,133 +384,137 @@
                     <path stroke-linecap="round" stroke-linejoin="round" d="M13.19 8.688a4.5 4.5 0 011.242 7.244l-4.5 4.5a4.5 4.5 0 01-6.364-6.364l1.757-1.757m13.35-.622l1.757-1.757a4.5 4.5 0 00-6.364-6.364l-4.5 4.5a4.5 4.5 0 001.242 7.244" />
                 </svg>
             </button>
-          <div class='overflow-auto'>
-            <div class='code-line' :class="parseInt($el.id.substring(1, $el.id.length)) >= startingLine && parseInt($el.id.substring(1, $el.id.length)) <= endingLine ? 'highlight' : ''" @click='highlightLine' id='L1'>
-              <div class='code-line__number'>
-                1
-              </div>
-              <div class='code-line__code'>FROM ocaml/opam@sha256:4d2dfd672896a4ffd168c4b7acf39a2506f5ccf70cdbc660382ecff265faafe9</div>
-            </div>
-            <div class='code-line' :class="parseInt($el.id.substring(1, $el.id.length)) >= startingLine && parseInt($el.id.substring(1, $el.id.length)) <= endingLine ? 'highlight' : ''" @click='highlightLine' id='L2'>
-              <div class='code-line__number'>
-                2
-              </div>
-              <div class='code-line__code'># alpine-3.14-4.14_opam-2.1</div>
-            </div>
-            <div class='code-line' :class="parseInt($el.id.substring(1, $el.id.length)) >= startingLine && parseInt($el.id.substring(1, $el.id.length)) <= endingLine ? 'highlight' : ''" @click='highlightLine' id='L3'>
-              <div class='code-line__number'>
-                3
-              </div>
-              <div class='code-line__code'>USER 1000:1000</div>
-            </div>
-            <div class='code-line' :class="parseInt($el.id.substring(1, $el.id.length)) >= startingLine && parseInt($el.id.substring(1, $el.id.length)) <= endingLine ? 'highlight' : ''" @click='highlightLine' id='L4'>
-              <div class='code-line__number'>
-                4
-              </div>
-              <div class='code-line__code'>RUN sudo ln -f /usr/bin/opam-2.1 /usr/bin/opam</div>
-            </div>
-            <div class='code-line' :class="parseInt($el.id.substring(1, $el.id.length)) >= startingLine && parseInt($el.id.substring(1, $el.id.length)) <= endingLine ? 'highlight' : ''" @click='highlightLine' id='L5'>
-              <div class='code-line__number'>
-                5
-              </div>
-              <div class='code-line__code'>WORKDIR /src</div>
-            </div>
-            <div class='code-line' :class="parseInt($el.id.substring(1, $el.id.length)) >= startingLine && parseInt($el.id.substring(1, $el.id.length)) <= endingLine ? 'highlight' : ''" @click='highlightLine' id='L6'>
-              <div class='code-line__number'>
-                6
-              </div>
-              <div class='code-line__code'>RUN sudo chown opam /src</div>
-            </div>
-            <div class='code-line' :class="parseInt($el.id.substring(1, $el.id.length)) >= startingLine && parseInt($el.id.substring(1, $el.id.length)) <= endingLine ? 'highlight' : ''" @click='highlightLine' id='L7'>
-              <div class='code-line__number'>
-                7
-              </div>
-              <div class='code-line__code'>RUN cd ~/opam-repository && (git cat-file -e bc8df14f0d08de7b76d0d43a043cbd0c5f356dec || git fetch origin master) && git reset -q --hard bc8df14f0d08de7b76d0d43a043cbd0c5f356dec && git log --no-decorate -n1 --oneline && opam update -u</div>
-            </div>
-            <div class='code-line' :class="parseInt($el.id.substring(1, $el.id.length)) >= startingLine && parseInt($el.id.substring(1, $el.id.length)) <= endingLine ? 'highlight' : ''" @click='highlightLine' id='L8'>
-              <div class='code-line__number'>
-                8
-              </div>
-              <div class='code-line__code'>RUN mkdir -p 'ocurrent/' 'ocluster/' 'ocluster/obuilder/' 'ocluster/' 'ocaml-version/' 'ocaml-matrix/' 'ocaml-dockerfile/'</div>
-            </div>
-            <div class='code-line' :class="parseInt($el.id.substring(1, $el.id.length)) >= startingLine && parseInt($el.id.substring(1, $el.id.length)) <= endingLine ? 'highlight' : ''" @click='highlightLine' id='L9'>
-              <div class='code-line__number'>
-                9
-              </div>
-              <div class='code-line__code'>COPY --chown=1000:1000 ocurrent/current_web.opam ocurrent/current_slack.opam ocurrent/current_rpc.opam ocurrent/current_gitlab.opam ocurrent/current_github.opam ocurrent/current_git.opam ocurrent/current_examples.opam ocurrent/current_docker.opam ocurrent/current.opam ocurrent/</div>
-            </div>
-            <div class='code-line' :class="parseInt($el.id.substring(1, $el.id.length)) >= startingLine && parseInt($el.id.substring(1, $el.id.length)) <= endingLine ? 'highlight' : ''" @click='highlightLine' id='L10'>
-              <div class='code-line__number'>
-                10
-              </div>
-              <div class='code-line__code'>COPY --chown=1000:1000 ocluster/ocluster.opam ocluster/ocluster-api.opam ocluster/</div>
-            </div>
-            <div class='code-line' :class="parseInt($el.id.substring(1, $el.id.length)) >= startingLine && parseInt($el.id.substring(1, $el.id.length)) <= endingLine ? 'highlight' : ''" @click='highlightLine' id='L11'>
-              <div class='code-line__number'>
-                11
-              </div>
-              <div class='code-line__code'>COPY --chown=1000:1000 ocluster/obuilder/obuilder.opam ocluster/obuilder/obuilder-spec.opam ocluster/obuilder/</div>
-            </div>
-            <div class='code-line' :class="parseInt($el.id.substring(1, $el.id.length)) >= startingLine && parseInt($el.id.substring(1, $el.id.length)) <= endingLine ? 'highlight' : ''" @click='highlightLine' id='L12'>
-              <div class='code-line__number'>
-                12
-              </div>
-              <div class='code-line__code'>COPY --chown=1000:1000 ocluster/current_ocluster.opam ocluster/</div>
-            </div>
-            <div class='code-line' :class="parseInt($el.id.substring(1, $el.id.length)) >= startingLine && parseInt($el.id.substring(1, $el.id.length)) <= endingLine ? 'highlight' : ''" @click='highlightLine' id='L13'>
-              <div class='code-line__number'>
-                13
-              </div>
-              <div class='code-line__code'>COPY --chown=1000:1000 ocaml-version/ocaml-version.opam ocaml-version/</div>
-            </div>
-            <div class='code-line' :class="parseInt($el.id.substring(1, $el.id.length)) >= startingLine && parseInt($el.id.substring(1, $el.id.length)) <= endingLine ? 'highlight' : ''" @click='highlightLine' id='L14'>
-              <div class='code-line__number'>
-                14
-              </div>
-              <div class='code-line__code'>COPY --chown=1000:1000 ocaml-matrix/matrix-stos.opam ocaml-matrix/matrix-server.opam ocaml-matrix/matrix-current.opam ocaml-matrix/matrix-ctos.opam ocaml-matrix/matrix-common.opam ocaml-matrix/matrix-ci-server.opam ocaml-matrix/matrix-ci-server-setup.opam ocaml-matrix/</div>
-            </div>
-            <div class='code-line' :class="parseInt($el.id.substring(1, $el.id.length)) >= startingLine && parseInt($el.id.substring(1, $el.id.length)) <= endingLine ? 'highlight' : ''" @click='highlightLine' id='L15'>
-              <div class='code-line__number'>
-                15
-              </div>
-              <div class='code-line__code'>COPY --chown=1000:1000 ocaml-dockerfile/dockerfile.opam ocaml-dockerfile/dockerfile-opam.opam ocaml-dockerfile/dockerfile-cmd.opam ocaml-dockerfile/</div>
-            </div>
-            <div class='code-line' :class="parseInt($el.id.substring(1, $el.id.length)) >= startingLine && parseInt($el.id.substring(1, $el.id.length)) <= endingLine ? 'highlight' : ''" @click='highlightLine' id='L16'>
-              <div class='code-line__number'>
-                16
-              </div>
-              <div class='code-line__code'>COPY --chown=1000:1000 ocaml-ci-web.opam ocaml-ci-solver.opam ocaml-ci-service.opam ocaml-ci-client.opam ocaml-ci-api.opam ./</div>
-            </div>
-            <div class='code-line' :class="parseInt($el.id.substring(1, $el.id.length)) >= startingLine && parseInt($el.id.substring(1, $el.id.length)) <= endingLine ? 'highlight' : ''" @click='highlightLine' id='L17'>
-              <div class='code-line__number'>
-                17
-              </div>
-              <div class='code-line__code'>RUN opam pin add -yn current_web.dev 'ocurrent/' && \</div>
-            </div>
-            <div class='code-line' :class="parseInt($el.id.substring(1, $el.id.length)) >= startingLine && parseInt($el.id.substring(1, $el.id.length)) <= endingLine ? 'highlight' : ''" @click='highlightLine' id='L18'>
-              <div class='code-line__number'>
-                18
-              </div>
-              <div class='code-line__code'>    opam pin add -yn current_slack.dev 'ocurrent/' && \</div>
-            </div>
-            <div class='code-line' :class="parseInt($el.id.substring(1, $el.id.length)) >= startingLine && parseInt($el.id.substring(1, $el.id.length)) <= endingLine ? 'highlight' : ''" @click='highlightLine' id='L19'>
-              <div class='code-line__number'>
-                19
-              </div>
-              <div class='code-line__code'>    opam pin add -yn current_rpc.dev 'ocurrent/' && \</div>
-            </div>
-            <div class='code-line' :class="parseInt($el.id.substring(1, $el.id.length)) >= startingLine && parseInt($el.id.substring(1, $el.id.length)) <= endingLine ? 'highlight' : ''" @click='highlightLine' id='L20'>
-              <div class='code-line__number'>
-                20
-              </div>
-              <div class='code-line__code'>    opam pin add -yn current_gitlab.dev 'ocurrent/' && \</div>
-            </div>
-            <div class='code-line' :class="parseInt($el.id.substring(1, $el.id.length)) >= startingLine && parseInt($el.id.substring(1, $el.id.length)) <= endingLine ? 'highlight' : ''" @click='highlightLine' id='L21'>
-              <div class='code-line__number'>
-                21
-              </div>
-              <div class='code-line__code'>    opam pin add -yn current_github.dev 'ocurrent/' && \</div>
-            </div>
+          <div class="table-overflow overflow-auto">
+            <table>
+              <tbody>
+                <tr class='code-line' :class="parseInt($el.id.substring(1, $el.id.length)) >= startingLine && parseInt($el.id.substring(1, $el.id.length)) <= endingLine ? 'highlight' : ''" @click='highlightLine' id='L1'>
+                  <td class='code-line__number'>
+                    1
+                  </td>
+                  <td class='code-line__code'>FROM ocaml/opam@sha256:4d2dfd672896a4ffd168c4b7acf39a2506f5ccf70cdbc660382ecff265faafe9</td>
+                </tr>
+                <tr class='code-line' :class="parseInt($el.id.substring(1, $el.id.length)) >= startingLine && parseInt($el.id.substring(1, $el.id.length)) <= endingLine ? 'highlight' : ''" @click='highlightLine' id='L2'>
+                  <td class='code-line__number'>
+                    2
+                  </td>
+                  <td class='code-line__code'># alpine-3.14-4.14_opam-2.1</td>
+                </tr>
+                <tr class='code-line' :class="parseInt($el.id.substring(1, $el.id.length)) >= startingLine && parseInt($el.id.substring(1, $el.id.length)) <= endingLine ? 'highlight' : ''" @click='highlightLine' id='L3'>
+                  <td class='code-line__number'>
+                    3
+                  </td>
+                  <td class='code-line__code'>USER 1000:1000</td>
+                </tr>
+                <tr class='code-line' :class="parseInt($el.id.substring(1, $el.id.length)) >= startingLine && parseInt($el.id.substring(1, $el.id.length)) <= endingLine ? 'highlight' : ''" @click='highlightLine' id='L4'>
+                  <td class='code-line__number'>
+                    4
+                  </td>
+                  <td class='code-line__code'>RUN sudo ln -f /usr/bin/opam-2.1 /usr/bin/opam</td>
+                </tr>
+                <tr class='code-line' :class="parseInt($el.id.substring(1, $el.id.length)) >= startingLine && parseInt($el.id.substring(1, $el.id.length)) <= endingLine ? 'highlight' : ''" @click='highlightLine' id='L5'>
+                  <td class='code-line__number'>
+                    5
+                  </td>
+                  <td class='code-line__code'>WORKDIR /src</td>
+                </tr>
+                <tr class='code-line' :class="parseInt($el.id.substring(1, $el.id.length)) >= startingLine && parseInt($el.id.substring(1, $el.id.length)) <= endingLine ? 'highlight' : ''" @click='highlightLine' id='L6'>
+                  <td class='code-line__number'>
+                    6
+                  </td>
+                  <td class='code-line__code'>RUN sudo chown opam /src</td>
+                </tr>
+                <tr class='code-line' :class="parseInt($el.id.substring(1, $el.id.length)) >= startingLine && parseInt($el.id.substring(1, $el.id.length)) <= endingLine ? 'highlight' : ''" @click='highlightLine' id='L7'>
+                  <td class='code-line__number'>
+                    7
+                  </td>
+                  <td class='code-line__code'>RUN cd ~/opam-repository && (git cat-file -e bc8df14f0d08de7b76d0d43a043cbd0c5f356dec || git fetch origin master) && git reset -q --hard bc8df14f0d08de7b76d0d43a043cbd0c5f356dec && git log --no-decorate -n1 --oneline && opam update -u</td>
+                </tr>
+                <tr class='code-line' :class="parseInt($el.id.substring(1, $el.id.length)) >= startingLine && parseInt($el.id.substring(1, $el.id.length)) <= endingLine ? 'highlight' : ''" @click='highlightLine' id='L8'>
+                  <td class='code-line__number'>
+                    8
+                  </td>
+                  <td class='code-line__code'>RUN mkdir -p 'ocurrent/' 'ocluster/' 'ocluster/obuilder/' 'ocluster/' 'ocaml-version/' 'ocaml-matrix/' 'ocaml-dockerfile/'</td>
+                </tr>
+                <tr class='code-line' :class="parseInt($el.id.substring(1, $el.id.length)) >= startingLine && parseInt($el.id.substring(1, $el.id.length)) <= endingLine ? 'highlight' : ''" @click='highlightLine' id='L9'>
+                  <td class='code-line__number'>
+                    9
+                  </td>
+                  <td class='code-line__code'>COPY --chown=1000:1000 ocurrent/current_web.opam ocurrent/current_slack.opam ocurrent/current_rpc.opam ocurrent/current_gitlab.opam ocurrent/current_github.opam ocurrent/current_git.opam ocurrent/current_examples.opam ocurrent/current_docker.opam ocurrent/current.opam ocurrent/</td>
+                </tr>
+                <tr class='code-line' :class="parseInt($el.id.substring(1, $el.id.length)) >= startingLine && parseInt($el.id.substring(1, $el.id.length)) <= endingLine ? 'highlight' : ''" @click='highlightLine' id='L10'>
+                  <td class='code-line__number'>
+                    10
+                  </td>
+                  <td class='code-line__code'>COPY --chown=1000:1000 ocluster/ocluster.opam ocluster/ocluster-api.opam ocluster/</td>
+                </tr>
+                <tr class='code-line' :class="parseInt($el.id.substring(1, $el.id.length)) >= startingLine && parseInt($el.id.substring(1, $el.id.length)) <= endingLine ? 'highlight' : ''" @click='highlightLine' id='L11'>
+                  <td class='code-line__number'>
+                    11
+                  </td>
+                  <td class='code-line__code'>COPY --chown=1000:1000 ocluster/obuilder/obuilder.opam ocluster/obuilder/obuilder-spec.opam ocluster/obuilder/</td>
+                </tr>
+                <tr class='code-line' :class="parseInt($el.id.substring(1, $el.id.length)) >= startingLine && parseInt($el.id.substring(1, $el.id.length)) <= endingLine ? 'highlight' : ''" @click='highlightLine' id='L12'>
+                  <td class='code-line__number'>
+                    12
+                  </td>
+                  <td class='code-line__code'>COPY --chown=1000:1000 ocluster/current_ocluster.opam ocluster/</td>
+                </tr>
+                <tr class='code-line' :class="parseInt($el.id.substring(1, $el.id.length)) >= startingLine && parseInt($el.id.substring(1, $el.id.length)) <= endingLine ? 'highlight' : ''" @click='highlightLine' id='L13'>
+                  <td class='code-line__number'>
+                    13
+                  </td>
+                  <td class='code-line__code'>COPY --chown=1000:1000 ocaml-version/ocaml-version.opam ocaml-version/</td>
+                </tr>
+                <tr class='code-line' :class="parseInt($el.id.substring(1, $el.id.length)) >= startingLine && parseInt($el.id.substring(1, $el.id.length)) <= endingLine ? 'highlight' : ''" @click='highlightLine' id='L14'>
+                  <td class='code-line__number'>
+                    14
+                  </td>
+                  <td class='code-line__code'>COPY --chown=1000:1000 ocaml-matrix/matrix-stos.opam ocaml-matrix/matrix-server.opam ocaml-matrix/matrix-current.opam ocaml-matrix/matrix-ctos.opam ocaml-matrix/matrix-common.opam ocaml-matrix/matrix-ci-server.opam ocaml-matrix/matrix-ci-server-setup.opam ocaml-matrix/</td>
+                </tr>
+                <tr class='code-line' :class="parseInt($el.id.substring(1, $el.id.length)) >= startingLine && parseInt($el.id.substring(1, $el.id.length)) <= endingLine ? 'highlight' : ''" @click='highlightLine' id='L15'>
+                  <td class='code-line__number'>
+                    15
+                  </td>
+                  <td class='code-line__code'>COPY --chown=1000:1000 ocaml-dockerfile/dockerfile.opam ocaml-dockerfile/dockerfile-opam.opam ocaml-dockerfile/dockerfile-cmd.opam ocaml-dockerfile/</td>
+                </tr>
+                <tr class='code-line' :class="parseInt($el.id.substring(1, $el.id.length)) >= startingLine && parseInt($el.id.substring(1, $el.id.length)) <= endingLine ? 'highlight' : ''" @click='highlightLine' id='L16'>
+                  <td class='code-line__number'>
+                    16
+                  </td>
+                  <td class='code-line__code'>COPY --chown=1000:1000 ocaml-ci-web.opam ocaml-ci-solver.opam ocaml-ci-service.opam ocaml-ci-client.opam ocaml-ci-api.opam ./</td>
+                </tr>
+                <tr class='code-line' :class="parseInt($el.id.substring(1, $el.id.length)) >= startingLine && parseInt($el.id.substring(1, $el.id.length)) <= endingLine ? 'highlight' : ''" @click='highlightLine' id='L17'>
+                  <td class='code-line__number'>
+                    17
+                  </td>
+                  <td class='code-line__code'>RUN opam pin add -yn current_web.dev 'ocurrent/' && \</td>
+                </tr>
+                <tr class='code-line' :class="parseInt($el.id.substring(1, $el.id.length)) >= startingLine && parseInt($el.id.substring(1, $el.id.length)) <= endingLine ? 'highlight' : ''" @click='highlightLine' id='L18'>
+                  <td class='code-line__number'>
+                    18
+                  </td>
+                  <td class='code-line__code'>    opam pin add -yn current_slack.dev 'ocurrent/' && \</td>
+                </tr>
+                <tr class='code-line' :class="parseInt($el.id.substring(1, $el.id.length)) >= startingLine && parseInt($el.id.substring(1, $el.id.length)) <= endingLine ? 'highlight' : ''" @click='highlightLine' id='L19'>
+                  <td class='code-line__number'>
+                    19
+                  </td>
+                  <td class='code-line__code'>    opam pin add -yn current_rpc.dev 'ocurrent/' && \</td>
+                </tr>
+                <tr class='code-line' :class="parseInt($el.id.substring(1, $el.id.length)) >= startingLine && parseInt($el.id.substring(1, $el.id.length)) <= endingLine ? 'highlight' : ''" @click='highlightLine' id='L20'>
+                  <td class='code-line__number'>
+                    20
+                  </td>
+                  <td class='code-line__code'>    opam pin add -yn current_gitlab.dev 'ocurrent/' && \</td>
+                </tr>
+                <tr class='code-line' :class="parseInt($el.id.substring(1, $el.id.length)) >= startingLine && parseInt($el.id.substring(1, $el.id.length)) <= endingLine ? 'highlight' : ''" @click='highlightLine' id='L21'>
+                  <td class='code-line__number'>
+                    21
+                  </td>
+                  <td class='code-line__code'>    opam pin add -yn current_github.dev 'ocurrent/' && \</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </div>
       </div>
